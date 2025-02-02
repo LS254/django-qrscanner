@@ -1,0 +1,16 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --color: black;
+    --bg-color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+}

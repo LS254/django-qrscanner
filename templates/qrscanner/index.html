@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Scanner</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="{% static 'qrscanner/js/qrscanner.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'qrscanner/css/stlye.css' %}">
+    <script>
+        const scanApiUrl = "{% url 'qrscanner-scan' %}";
+    </script>
+</head>
+<body>
+    <h1>Scan Everything!</h1>
+
+    <div id="reader" style="width: 300px; margin-bottom: 20px;"></div>
+
+    <div id="result" style="font-weight: bold;"></div>
+
+    <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+</body>
+</html>
