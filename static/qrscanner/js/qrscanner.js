@@ -41,10 +41,21 @@ document.addEventListener("DOMContentLoaded", function () {
         console.warn("⚠️ Scan error:", errorMessage);
     }
 
+    // scanner UI elements
+    let scannerConfig = {
+        fps: 10,
+        qrbox: 250,
+        rememberLastUsedCamera: true,
+        showTorchButtonIfSupported: true,
+        showZoomSliderIfSupported: true 
+    };
+
     let html5QrCodeScanner = new Html5QrcodeScanner(
         "reader",
-        { fps: 10, qrbox: 250 },
+        scannerConfig,
         false
     );
+
+    // start html5-qrscanner
     html5QrCodeScanner.render(onScanSuccess, onScanError);
 });
