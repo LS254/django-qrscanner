@@ -6,7 +6,6 @@
     <title>QR Code Scanner</title>
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="{% static 'qrscanner/js/qrscanner.js' %}" defer></script>
-    <link rel="stylesheet" href="{% static 'qrscanner/css/stlye.css' %}">
     <script>
         const scanApiUrl = "{% url 'qrscanner-scan' %}";
     </script>
@@ -14,7 +13,7 @@
 <body>
     <h1>Scan Everything!</h1>
 
-    <div id="reader" style="width: 300px; margin-bottom: 20px;"></div>
+    <div id="reader" class="qr-reader"></div>
 
     <div id="result" style="font-weight: bold;"></div>
 

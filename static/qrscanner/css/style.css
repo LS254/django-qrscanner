@@ -14,3 +14,8 @@ body {
     justify-content: center;
     margin: 2em;
 }
+
+.qr-reader {
+    width: 80%;
+    height: 2rem;
+}
