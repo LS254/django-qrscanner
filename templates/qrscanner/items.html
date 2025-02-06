@@ -4,9 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventory</title>
 </head>
 <body>
-    
+    <h1>Scanned Items</h1>
+
+    {#<!-- Form to Add Items -->#}
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="add">
+        <input type="text" name="qr_code" placeholder="QR String" required>
+        <input type="text" name="name" placeholder="Item Name" required>
+        <button type="submit">Add Item</button>
+    </form>
+
+    {#<!-- Display Items -->#}
+    <ul>
+        {% for item in items %}
+            <li>
+                <strong>{{ item.name }}</strong> (QR Code: {{ item.qr_code }}) - Scanned: {{ item.scanned_count }} times
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="remove">
+                    <input type="hidden" name="qr_code" value="{{ item.qr_code }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
+
