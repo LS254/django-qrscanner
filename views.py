@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import scanned_codes
+from django.views.generic import TemplateView
 
 def scan_qr(request):
     return render(request, 'qrscanner/index.html')
@@ -29,4 +30,8 @@ def process_qr_code(request):
                 return JsonResponse({"success": False, "message": "QR code not recognized in the database"}, status=404)
         except json.JSONDecodeError:
             return JsonResponse({"success": False, "message": "Invalid JSON"}, status=400)
-    return JsonResponse({"success": False, "message": "Only POST requests allowed"}, status=405)
+
+class InventoryView(TemplateView):
+
+
+    template_name = "qrscanner/items.html"
