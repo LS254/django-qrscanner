@@ -1,0 +1,29 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --color-primary: #000000;
+    --color-secondary: #808080;
+    --color-title: #000000;
+    --bg-color: #ffffff;
+    --btn-color: #ffffff;
+    --btn-bg-color: #000000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+}
+
+/* TODO */
+
+
+/* Desktop */
+@media (min-width: 600px) {
+    /* TODO: */
+}
