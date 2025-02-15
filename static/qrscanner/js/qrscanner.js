@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // scanner UI elements
     let scannerConfig = {
-        fps: 10,
+        fps: 1,
         qrbox: 250,
         rememberLastUsedCamera: true,
         showTorchButtonIfSupported: true,
